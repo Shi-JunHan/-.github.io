@@ -3,38 +3,42 @@
   <head>
     <title>HW2</title>
     <style>
+      header
+      {
+        text-align: center;
+        color:  #FFFF77;
+        text-shadow:10px 5px 7px white;
+        font-weight: bold;
+        font-size: 55px ;
+        font-family: Microsoft JhengHei ;
+      }
       body
+
       {
         background-image:url(picture/DSC09178.jpg);
         background-size: 100%;
       }
 
       table{
+          margin-top: 50px;
           border: 1px solid orange;
           border: orange solid;
           opacity: 0.85;
           width: 60%;
           height: 90%;
       }
-
-      h1{
-        color: white;
-        text-shadow:12px 8px 5px #DDDDDD;
-        font-weight: bold;
-        font-size: 55px ;
-        font-family: Microsoft JhengHei ;
-      }
-
       .b{
           background-color: #FFFFBB;
           color: black;
-          font-size: 25px;
+          font-size: 30px;
           padding: 10px 20px;
           border: yellow solid;
           margin: 30px;
       }
 
       td{
+          font-size: 20px;
+          font-weight: bold;
           border: 1px dotted gray;
           font-family: Microsoft JhengHei ;
           padding: 11px; 
@@ -44,11 +48,20 @@
           background-color:#FF8888;
           padding: 11px; 
       }
+
+      address{
+             color: white;
+             font-style: normal;
+             font-weight:normal;
+             letter-spacing:2px;
+             text-align:center;
+             font-family:"微軟正黑體";
+            }
     </style>
   </head>
   <body>
+    <header>回饋建議表單</header>
     <table align="center">
-      <h1 align="center">回饋建議表單</h1>
       <tr>
         <td>系級</td>
         <td>
@@ -119,5 +132,12 @@
       <input type="submit" name="cc" value="送出" class="b">
       <input type="reset" name="cc" value="取消" class="b">
     </div>
+    <address>
+      <hr> 
+      <div class="addone">中原大學資訊管理學系&nbsp;&nbsp;320桃園市中壢區中北路200號&nbsp;Tel:03 265 9999<br></div>
+      <div class="addtwo">Copyright©2019by中原大學資管系All rights reserved</div>
+
+    </address>
+
   </body>
 </html>
