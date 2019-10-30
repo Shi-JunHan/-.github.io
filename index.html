@@ -2,14 +2,189 @@
 <html>
 <head>
 	<title>第十二組</title>
+	<style>
+       body{
+             background: white;
+            }
+
+       .pic{
+            display: none;
+            width: 900px;
+            height: 600px;
+            margin: auto;
+           }
+       #head{
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: -180px;
+       }
+       #CYCU{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 200px;
+            left: -230px;
+            width: 180px;
+            height: 180px;
+           }
+      #wel{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 120px;
+            top: -15px;
+            width: 500px;
+            height: 50px;
+          }
+      input:checked + img 
+           {
+              display: block;
+           }
+
+      input {
+              position: absolute;
+              left: -9999px;
+            }
+      .hidden{
+              color: white;
+              font-family: "微軟正黑體";
+      }
+      label {
+            cursor: pointer;
+            }
+		   
+	    #title{
+             display: block;
+             line-height: 132px;
+			       font-size: 75px;
+             font-family: "微軟正黑體";
+			       font-weight: bolder;
+			       letter-spacing: 1px;
+			       text-align: center;
+             position: relative;
+             left: 50px;
+		        }
+      
+      .topbut{
+                background-color:#787878;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                position: relative;
+                top: -130px;
+             }
+
+      table {
+                margin-left: auto;
+                margin-right: auto;
+                font-weight: bold;
+                font-size:20px;
+            }
+
+      table td{
+                 padding-right: 100px;
+              }
+
+	    .bg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -999;
+            background:linear-gradient(to top);
+	        }
+
+     .imgtext
+       {
+          text-align: center;
+          position: relative;
+          top: -40px;
+          letter-spacing:5px;
+          color: white;
+          font-size: 27px;
+       }
+
+		 address{
+			       color: black;
+			       font-style: normal;
+			       font-weight:normal;
+			       letter-spacing:2px;
+		         text-align:center;
+             font-family:"微軟正黑體";
+		        }
+
+     .addone{font-size:15px;}
+     .addtwo{font-size:10px;
+             font-style:oblique;
+             font-weight:lighter;
+            }
+	</style>
 </head>
+
 <body>
-	<a href="map.html" target="_self">
-	<img src="map_pic.png" width="120px">
-    </a>
-    <a href="video.html" target="_self">
-	<img src="video_pic.png" width="120px">
-    </a>
+    <header>
+      <div id="head">
+      <img src="picture/favicon.png" id="CYCU"/>
+      <font id="title">中原大學</font>
+      <img src="picture/welcome.png" id="wel"/>
+      </div>
+    </header>
+
+     <div class="topbut">
+      <table>
+          <tr>
+            <td>
+              <img src="picture/map.png" width="45px" height="20px">
+              <a id="tab1" href="map.html" target="_blank" title="中原大學地圖導覽" class="tab">
+              <font class="hidden">校園地圖導覽</font></a>
+            </td>
+            <td>
+              <img src="picture/film.png" width="25px" height="20px" >
+              <a id="tab2" href="video.html" target="_blank" title="推廣影片">
+              <font class="hidden" >推廣影片</font></a>
+            </td>
+            <td>
+              <img src="picture/member.png" width="25px" height="20px" >
+              <a id="tab3" href="http://alumni.cycu.edu.tw/alumni/" target="_blank" title="組員介紹">
+              <font class="hidden">組員介紹</font></a>
+            </td> 
+            <td>
+              <img src="picture/call.png" width="25px" height="20px" >
+              <a id="tab4" href="表單.html" target="_blank" title="聯絡我們">
+              <font class="hidden">聯絡我們</font></a>
+            </td> 
+          </tr>
+      </table>
+     </div>
+
+  <div class="cont">
+        <input id="img1" type="radio" checked="checked" name="img"  />
+        <img src="picture/cover2.jpg" class="pic" />
+        <input id="img2" type="radio" name="img">
+        <img src="picture/cover3.jpg" class="pic" />
+        <input id="img3" type="radio" checked="checked" name="img"  />
+        <img src="picture/cover4.jpg" class="pic" />
+        <input id="img4" type="radio" checked="checked" name="img"  />
+        <img src="picture/cover1.png" class="pic" />
+
+    </div>
+    <div class="imgtext">
+        <label for="img1">&Omicron;</label>
+        <label for="img2">&Omicron;</label>
+        <label for="img3">&Omicron;</label>
+        <label for="img4">&Omicron;</label>
+    </div>
+
+    
+    <address>
+      <hr> 
+      <div class="addone">中原大學資訊管理學系&nbsp;&nbsp;320桃園市中壢區中北路200號&nbsp;Tel:03 265 9999<br></div>
+      <div class="addtwo">Copyright©2019by中原大學資管系All rights reserved</div>
+
+    </address>
 
 </body>
 </html>

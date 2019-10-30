@@ -1,9 +1,465 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>map</title>
+	<meta charset="UTF-8">
+	<title>中原大學地圖導覽</title>
+	<style>
+		@font-face
+		{
+           font-family:"genkai-mincho";
+           src: url(genkai-mincho.ttf);
+           font-family:"I.Ngaan";
+           src: url(I.Ngaan.ttf);
+        }
+
+		body
+		{
+           background-color:#EEFFBB;
+           height: 100%;
+	    }
+
+		.sitebody
+		{
+		  width:600px;
+　        margin:0 auto;
+　        font-size:13px;
+		}
+		.header
+		{
+		  background-color:#888888;
+		  font-size: 80px;
+		  font-family:"genkai-mincho";
+		  font-weight: bolder;
+          text-align: center;
+		}
+        .content
+        {
+           margin-left:10%;
+           margin-right:10%;
+           height:100%;
+           background-color:white;
+           text-align:left;
+
+           line-height:25px;
+           padding-top: 0px;
+        }
+        .footer
+	    {
+	      clear:both;
+　        background-color:black;
+　        height:80px;
+　        text-align:center;
+　        line-height:80px;
+          color:black;
+	      font-style: normal;
+	      font-weight:normal;
+		  letter-spacing:2px;
+		  text-align:center;
+          font-family:"微軟正黑體";
+          line-height: 30px;
+	    }
+	    .addone{font-size:15px;}
+        .addtwo
+        {
+        	font-size:10px;
+            font-style:oblique;
+            font-weight:lighter;
+        }
+		
+		img
+		{
+	      display:block;
+       	  margin:auto;
+		}
+
+		div
+		{
+		  cursor:pointer;
+		}
+
+		.back-to-top 
+		{
+		   display: none; /* 默認是隱藏的，這樣在第一屏才不顯示 */
+		   position: fixed; /* 位置是固定的 */
+		   bottom: 20px; /* 顯示在頁面底部 */
+		   right: 30px; /* 顯示在頁面的右邊 */
+		   z-index: 99; /* 確保不被其他功能覆蓋 */
+		   border: 1px solid #5cb85c; /* 顯示邊框 */
+		   outline: none; /* 不顯示外框 */
+		   background-color: #fff; /* 設置背景背景顏色 */
+		   color: #5cb85c; /* 設置文本顏色 */
+		   cursor: pointer; /* 滑鼠移到按鈕上顯示手型 */
+		   padding: 10px 15px 15px 15px; /* 增加一些內邊距 */
+		   border-radius: 10px; /* 增加圓角 */
+		}
+
+		.back-to-top:hover 
+		{
+		   background-color: #5cb85c; /* 滑鼠移上去時，反轉顏色 */
+		   color: #fff;
+		}
+
+		h1
+		{  
+		   text-indent:3px;
+		   padding-left:10px;
+           font-size: 30px;
+           font-color:#444444；
+           font-weight: bold;
+           font-family:"I.Ngaan";
+		}
+
+		h2
+		{
+		   text-indent:20px;
+		   padding-left:20px;
+		   padding-right: 20px;
+           font-size: 20px;
+           font-weight: normal;
+           line-height: 40px;
+           letter-spacing:3px;
+		}
+
+		.cont img
+		{ 
+		   width: 450px;
+		   height:300px;
+		   transform:scale(1,1);transition: all 1s ease-out;
+          
+		}
+		.cont img:hover
+		{
+           transform:scale(1.2,1.2);
+		}
+		.department
+		{
+			color:blue;
+			font-style:italic;
+		}
+
+	</style>
 </head>
+
+
 <body>
+    <div id="sitebody">
+　     <div class="header">中原大學地圖導覽</div>
+　     <div class="content">
+	       <img src="picture/校內地圖.jpg" usemap="#image-map">
+
+	       <map name="image-map">
+	       <div>					
+	          <area onclick="goTo熱誠宿舍();" alt="熱誠宿舍" title="熱誠宿舍" coords="627,124,699,192" shape="rect">
+	          <area onclick="goTo信實宿舍();" alt="信實宿舍" title="信實宿舍" coords="705,125,773,191" shape="rect">
+	          <area onclick="goTo力行宿舍();" alt="力行宿舍" title="力行宿舍" coords="18,227,17,266,41,284,182,234,175,210,143,185" shape="poly">
+	          <area onclick="goTo良善宿舍();" alt="良善宿舍" title="良善宿舍" coords="502,490,564,548" shape="rect">
+	          <area onclick="goTo恩慈宿舍();" alt="恩慈宿舍" title="恩慈宿舍" coords="567,483,638,546" shape="rect">
+	          <area onclick="goTo體育館();" alt="體育館" title="體育館" coords="185,137,187,205,211,223,311,187,273,127" shape="poly">
+	          <area onclick="goTo全人村();" alt="全人村" title="全人村" coords="247,213,242,251,295,303,423,261,344,185" shape="poly">
+	          <area onclick="goTo生科樓();" alt="生科樓" title="生科樓" coords="77,277,125,335" shape="rect">
+	          <area onclick="goTo活動中心();" alt="活動中心" title="活動中心" coords="131,283,133,319,228,302,204,255" shape="poly">
+	          <area onclick="goTo圖書館();" alt="圖書館" title="圖書館" coords="98,338,103,377,137,393,199,376,196,342,173,324" shape="poly">
+	          <area onclick="goTo懷恩樓();" alt="懷恩樓" title="懷恩樓" coords="109,439,119,466,243,421,223,399" shape="poly">
+	          <area onclick="goTo維澈樓();" alt="維澈樓" title="維澈樓" coords="257,459,251,537,347,517,351,461,329,440" shape="poly">
+	          <area onclick="goTo行政大樓();" alt="行政大樓" title="行政大樓" coords="300,393,302,411,349,452,361,455,362,438,323,390" shape="poly">
+	          <area onclick="goTo真知教學大樓();" alt="真知教學大樓" title="真知教學大樓"  coords="365,425,367,491,398,541,473,539,474,469,437,417" shape="poly">
+	          <area onclick="goTo中正樓();" alt="中正樓" title="中正樓" coords="523,342,551,399,634,396,609,335" shape="poly">
+	          <area onclick="goTo資管樓();" alt="資管樓" title="資管樓" coords="517,293,593,334" shape="rect">
+	          <area onclick="goTo商設();" alt="商設館" title="商設館" coords="597,291,630,325" shape="rect">
+	          <area onclick="goTo商學大樓();" alt="商學大樓" title="商學大樓" coords="522,207,594,282" shape="rect">
+	          <area onclick="goTo工學館();" alt="工學館" title="工學館" coords="634,216,625,279,639,296,679,309,671,226" shape="poly">
+	          <area onclick="goTo土木館();" alt="土木館" title="土木館" coords="687,287,744,335" shape="rect">
+	          <area onclick="goTo莊敬大樓();" alt="莊敬大樓" title="莊敬大樓" coords="626,337,691,374" shape="rect">
+	          <area onclick="goTo科學館理學大樓();" alt="科學館理學大樓" title="科學館理學大樓" coords="312,301,311,347,332,372,425,349,425,303,402,280" shape="poly">
+	          <area onclick="goTo化學館();" alt="化學館" title="化學館" coords="430,298,480,340" shape="rect">
+	          <area onclick="goTo篤信電學大樓();" alt="篤信電學大樓" title="篤信電學大樓" coords="454,420,475,456,479,494,530,476,529,446,507,416" shape="poly">
+	          <area onclick="goTo建築館();" alt="建築館" title="建築館" coords="565,405,561,426,581,475,606,476,600,438,665,436,637,405" shape="poly">
+	          <area onclick="goTo室設館();" alt="室設館" title="室設館" coords="721,338,723,363,767,355,763,338" shape="poly">
+	          <area onclick="goTo景觀館();" alt="景觀館" title="景觀館" coords="739,392,777,425" shape="rect">
+	          <area onclick="goTo設計學院();" alt="設計學院" title="設計學院" coords="701,402,700,439,757,444,755,430,737,422,728,401" shape="poly">
+	        </div>
+	        </map>
+
+	        <pre></pre>
+		    <div class="cont">
+		    <p id="熱誠宿舍">
+		    	<h1><a href="https://www.facebook.com/pages/%E4%B8%AD%E5%8E%9F%E5%A4%A7%E5%AD%B8%E7%86%B1%E8%AA%A0%E5%AE%BF%E8%88%8D/325262811181447?nr">&#9752</a>熱誠宿舍：</h1>
+		    	<h2>提供大二以上的學生住的宿舍，熱誠十二樓提供了自習室供學生使用，二樓的部分也提供開伙的區域，也有地下停車場。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09256.jpg" />　</td>
+                  <td>　<img src="picture/DSC09254.jpg" />　</td>
+                 </tr></tbody></table>
+		    </p>
+		    <p id="信實宿舍">
+		    	<h1><a href="https://www.facebook.com/%E4%B8%AD%E5%8E%9F%E5%A4%A7%E5%AD%B8%E4%BF%A1%E5%AF%A6%E5%AE%BF%E8%88%8D-111831668905915/">&#9752</a>信實宿舍：</h1>
+		    	<h2>提供大二以上的學生住的宿舍，有提供健身房、桌球室、撞球室、籃球機。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                  <tbody><tr>
+                  <td>　<img src="picture/DSC09250.jpg" />　</td>
+                  <td>　<img src="picture/DSC09245.jpg" />　</td>
+                 </tr></tbody></table>
+		    </p>
+		    <p id="力行宿舍">
+		    	<h1><a href="https://www.facebook.com/CYCU.LiHsing">&#9752</a>力行宿舍：</h1>
+		    	<h2>中原大學安排大一新生住的宿舍（男生），位於新中北路上，房型分為４至６人房。</h2>
+		    </p>
+		    </p>
+		    <p id="良善宿舍">
+		    	<h1><a href="https://www.facebook.com/LianShanDorm/">&#9752</a>良善宿舍:</h1>
+		    	<h2>中原大學提供大一女生住的宿舍，鄰近中原夜市，生活機能方便。</h2>
+		    </p>
+		    <p id="恩慈宿舍">
+		    	<h1><a href="https://www.facebook.com/pg/EnTzuDorm/posts/">&#9752</a>恩慈宿舍：</h1>
+		    	<h2>中原大學提供大一女生住的宿舍，鄰近中原夜市，生活機能方便。</h2>
+		    </p>
+		    <p id="體育館">
+		    	<h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=1600&pageSize=15&curPage=1">&#9752</a>體育館:</h1>
+		    	<h2>位置在力行宿舍的右側，地下一樓有著可供學生免費使用的健身房，一樓有室內羽球、籃球、排球的球場，二樓則有著體育專用教室，例如瑜珈、跆拳道等；游泳池則在體育館正門的右側。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr >
+                  <td>　<img src="picture/DSC09144.jpg" />　</td>
+                  <td>　<img src="picture/DSC09142.jpg" />　</td>
+                 </tr>
+                 <tr>
+                 	<td>　<img src="picture/DSC09151.jpg" />　</td>
+                 	<td>　<img src="picture/DSC09146.jpg" />　</td>		
+                 </tr></tbody></table>
+		    </p>
+		    <p id="全人村">
+			  <h1><a href="https://cge.cycu.edu.tw">&#9752</a>全人村：</h1>
+			  <h2>國內第一座由大學自行募款籌設的「全人教育村」，推廣中原大學所倡導以及力行的全人教育理念與精神，地下室一樓為停車空間，一樓有校友聯絡室、心理輔導中心、健康中心、會議廳、演藝廳、展覽室等；包括校牧室、禮拜堂兼音樂廳，有著許多線上影音資源可供學生使用。</h2>
+			  <h2>內有:<div class="department"><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=8700">應用華語文學系</a>、<a href="https://alls.cycu.edu.tw/wSite/mp?mp=8200">應用外語系</a>、<a href="https://fel.cycu.edu.tw/wSite/mp?mp=29">財經法律系</a>、<a href="https://special.cycu.edu.tw/wSite/mp?mp=8100">特殊教育系</a>、<a href="https://wp.cycu.edu.tw/lc/">語言中心</a></div></h2>
+			  <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr >
+                  <td>　<img src="picture/DSC09136.jpg" />　</td>
+                  <td>　<img src="picture/20191029-DSC03142.jpg" />　</td>
+                 </tr>
+                 <tr>
+                 	<td>　<img src="picture/20191029-DSC03140.jpg" />　</td>
+                 	<td>　<img src="picture/20191029-DSC03141.jpg" />　</td>		
+                 </tr></tbody></table>
+
+		    <p id="生科樓">
+		    	<h1>&#9752生科樓:</h1>
+		    	<h2>位於活動中心的左側，教室多為理學院的實驗室。</h2>
+		    	<h2>內有:<div class="department"><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=3500">生物科技學系</a>、<a href="https://bee.cycu.edu.tw">環境工程學系</a></div></h2>
+
+		    	
+		    </p>
+		    <p id="活動中心">
+		    	<h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/np?ctNode=16050&mp=2100">&#9752</a>活動中心：</h1>
+		    	<h2>有著各種社團的教室以及場地可供學生借用，地下一樓是學生餐廳與麥當勞，一樓有著演藝廳，二樓有專用性教室，如需辦活動可供借用，三、四樓則是社團的教室及場地。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09131.jpg"/>　</td>
+                  <td>　<img src="picture/DSC09132.jpg"/>　</td>
+                 </tr></tbody></table>
+		    </p>
+		   <p id="圖書館">
+		   	    <h1><a href="https://www.lib.cycu.edu.tw">&#9752</a>張靜愚圖書館：</h1>
+		    	<h2>位於懷恩樓後側，一樓為行政單位處室，二樓是出入口、借還書櫃台，三、四、五樓則為三（西文圖書），四、五（中文圖書），館藏豐富，同學要多加利用唷！</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/20191029-DSC03139.jpg"/>　</td>
+                  <td>　<img src="picture/DSC09128.jpg"/>　</td>
+                 </tr></tbody></table>
+		   </p>
+		   <p id="懷恩樓">
+		     	<h1><&#9752懷恩樓：</h1>
+		    	<h2>中原歷史悠久的一棟樓，一、二樓為教室，一樓的教室只要沒有老師上課，門開著就可供學生自習，時間是二十四小時都開放喔。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09216.jpg" />　</td>
+                  <td>　<img src="picture/20191029-DSC03136.jpg" />　</td>
+                 </tr></tbody></table>
+		   </p>
+		   <p id="維澈樓">
+		   	    <h1><a href="https://www1.cycu.edu.tw/administrative/">&#9752</a>維澈樓：</h1>
+		    	<h2>地下一樓有停車場，維澈樓一樓櫃台提供教務處、學務處、出納組等服務，一樓也有著星巴克，使校園增添了些咖啡氛圍，而維澈八樓為中原會館，提供舒適豪華的住宿服務，出示與學校有關的證明，就有機會打折唷！</h2>
+
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09214.jpg" />　</td>
+                  <td>　<img src="picture/DSC09110.jpg" />　</td>
+                  <tr>
+                 	<td>　<img src="picture/123.jpg" />　</td>
+                 	<td>　<img src="picture/DSC09120.jpg" />　</td>	
+                 </tr></tbody></table>
+		   </p>
+		   <p id="行政大樓">
+		   	    <h1><a href="https://museum.cycu.edu.tw/site/">&#9752</a>行政大樓：</h1>
+		    	<h2>一樓為校史室，二、三樓為行政辦公室。</h2>
+		   </p>
+		   <p id="真知教學大樓">
+		   	    <h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=08400">&#9752</a>教學大樓：</h1>
+		    	<h2>地下室一樓為停車空間，一至六樓規劃為教室空間、七樓為電算中心辦公室、資訊機房及專用教室、八樓為教務處試務中心及專用教室、九樓為推廣中心辦公室。教學大樓真正成為中原師生的教學與學習、教師與學生互動的場地。所有教室都配備有「資訊講桌」，整合了無線上網、多媒體單槍投影、以及無線麥克風等功能，上課教師只要帶著筆記型電腦就可以直接上課，非常便利。其中最特別的是一樓的遠距教學教室，它不僅可以提供同步型校內外視訊教學及會議，更可以提供高品質的數位學習應用設備，以數位白板、資料提示機及電腦網路，取代傳統的黑板教學，可謂是「未來資訊化教室」的典範。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09108.jpg" />　</td>
+                  <td>　<img src="picture/DSC09191.jpg" />　</td></tr>
+                  <tr>
+                 	<td>　<img src="picture/20191029-DSC03129.jpg"/></td>
+                 	<td>　<img src="picture/DSC09173.jpg" />　</td></tr>	
+                 <tr>
+                 	<td>　<img src="picture/DSC09184.jpg"/></td>
+                 	<td>　<img src="picture/DSC09189.jpg" />　</td>
+                 </tr></tbody></table>
+
+		   </p>
+		   <p id="中正樓">
+		   	    <h1><a href="https://www.facebook.com/pages/中原大學中正樓/157846604270744">&#9752</a>中正樓：</h1>
+		    	<h2>大部分的校園演講、演唱會都會在此舉辦，地下室則有239坪的大空間(多隔間舞蹈教室、多功能活動區，休憩討論區、社團辦公室)，可供社團練習與討論。</h2>
+                  <img src="picture/20191029-DSC03117.jpg"/>
+
+		   </p>
+		   <p id="資管樓">
+		   	    <h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=5400">&#9752</a>資管樓:</h1>
+		  
+		    	<h2>為資管系專用的一棟大樓，有著電腦教室、專題教室、物聯網創課基地、會議室，可供課後小組討論報告。</h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/DSC09098.jpg"/>　</td>
+                  <td>　<img src="picture/DSC09094.jpg"/>　</td>
+                 </tr></tbody></table>
+
+		   </p>
+		   <p id="商設館">
+		   	    <h1><a href="https://cycd.cycu.edu.tw/news/0/1">&#9752</a>商設館：</h1>
+		    	<h2>位於資管樓的右側，許多設計系的學生作品集會展示在館內。</h2>
+		   </p>
+		   <p id="商學大樓">
+		   	    <h1><a href="https://cob.cycu.edu.tw/wSite/mp?mp=5000">&#9752</a>商學、管理大樓：</h1>
+		    	<h2>位於資管樓後方，有著商學講堂，提倡沒有壓力的優質空間，讓進入空間的人可以感覺到豐富的層次性，並在照明、色彩與材料的使用上，提供使用者感動的學習、交流空間，未來可增設同步翻譯及多媒體系統等擴充設備空間，打造全方位的專業講堂。</h2>
+		    	<h2><div class="department">內有:<a href="https://ba.cycu.edu.tw/wSite/mp?mp=5100s">企業管理學系</a>、<a href="https://www.ib.cycu.edu.tw">國際經營與貿易學系</a>、<a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=5700">財物金融學系</a>、<a href="https://ac.cycu.edu.tw">會計學系</a></div></h2>
+		    	<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 <tbody><tr>
+                  <td>　<img src="picture/20191029-DSC03111.jpg"/></td>
+                  <td>　<img src="picture/DSC09089.jpg" />　</td></tr>
+                  <tr>
+                 	<td>　<img src="picture/DSC09083.jpg"/></td>
+                 	<td>　<img src="picture/DSC09078.jpg" />　</td></tr>	
+                 <tr>
+                 	<td>　<img src="picture/DSC09080.jpg"/></td>
+                 	<td>　<img src="picture/DSC09189.jpg" />　</td>
+                 </tr></tbody></table>
+		   </p>
+		   <p id="工學館">
+		   	    <h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=4000">&#9752</a>工學館：</h1>
+		    	<h2>位於商學大樓的右側，有著環境科技研發中心，向外爭取建教、研發案件。</h2>
+		    	<h2>內有:<div class="department"><a href="https://che.cycu.edu.tw">化學工程學系</a>、<a href="http://www.me.cycu.edu.tw">機械工程學系</a></div></h2>
+		   </p>
+		   <p id="土木館">
+		   	    <h1><a href="https://ce.cycu.edu.tw/wSite/mp?mp=4200">&#9752</a>土木館：</h1>
+		    	<h2>位於室設館的左側，擁有完善之實驗設備，諸如工程材料試驗室、水力工程實驗室、結構實驗室、土壤力學實驗室、測量儀器室等。
+		    	擁有獨立之系館1700坪，符合本系所有的教學、實驗及研究所需。另於系館旁增設實驗空間約70坪。
+                <ol type="1" start="1">
+                	<li>擁有獨立之系館1700坪，符合本系所有的教學、實驗及研究所需。另於系館旁增設實驗空間約70坪。</li>
+                	<li>實驗設備每年持續增購及更新，並維持高度之使用率。</li>
+                	<li>研究生有專用之研究空間。</li>
+                	<li>教學視聽器材如投影機、幻燈機、錄放影機、電視機、微式麥克風等一律俱全。</li>
+                	<li>系館擁有可容納200人之講堂一處，以供演講之用；其中空調、放映及音響設備齊全。</li>
+                	<li>本系所有相關國內外圖書文獻皆存於本校圖書館。目前有關工程及科學方面之書籍，計有十二萬冊以上,有關土木及水利之專業藏書亦有萬餘冊。土木水利工程相關之國內外學術期刊，計有五十八種</li>
+                </ol>
+		    	</h2>
+		   </p>
+		   <p id="莊敬大樓">
+		   	    <h1>&#9752莊敬大樓:</h1>
+		    	<h2>內有：<a href="http://www.ee.cycu.edu.tw/about4.php">電機工程學系</a>、<a href="https://ise.cycu.edu.tw/wSite/mp?mp=44001">工業與系統工程學</a></h2>
+		   </p>
+		   <p id="科學館理學大樓">
+		   	    <h1><a href="https://science.cycu.edu.tw">&#9752</a>科學館理學大樓:</h1>
+		    	<h2></h2>
+		    	<h2>內有:<div class="department"><a href="https://math292.wixsite.com/cycumath">應用數學系</a>、<a href="http://oriphy.ori.com.tw">物理學系</a>、<a href="https://cycupsychology.wixsite.com/cycupsy">心理學系</a></div></h2>
+		   </p>
+		   <p id="化學館">
+		   	    <h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=3300">&#9752</a>化學館：</h1>
+		    	<h2>本系畢業的校友以進修研究及就業為兩大主要的出路，其進修的管道包含：化學、化工、環境工程、材料科學、核子工程、藥學、生物化學、污染防治、輻射生物、海洋化學等相關領域研究所；本系畢業系友之就業管道相當豐富，如在台積電、聯電等知名半導體公司及生物科技、奈米科技等產業界工作；同時亦有在各大化學廠、化工廠之研究發展、生產及管理部門服務，從事化學藥品及儀器之行銷，環保工作中之檢驗廢棄物處理；另外在各級學校擔任老師（，亦有系友擔任公務機關研究分析及行政部門之工作。</h2>
+		   </p>
+		   <p id="篤信電學大樓">
+		   	    <h1><a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=66004">&#9752</a>篤信電學大樓:</h1>
+		    	<h2>內有:<div class="department"><a href="https://el.cycu.edu.tw/wSite/mp?mp=46002">電子工程學系</a>、<a href="https://uip.cycu.edu.tw/UIPWeb/wSite/mp?mp=4700">資訊工程學系</a></div></h2>
+		   </p>
+		   <p id="建築館">
+		   	    <h1>&#9752：</h1>
+		    	<h2></h2>
+		   </p>
+		   <p id="室設館">
+		   	    <h1>&#9752：</h1>
+		    	<h2></h2>
+		   </p>
+		   <p id="景觀館">
+		   	    <h1>&#9752：</h1>
+		    	<h2></h2>
+		   </p>
+		   <p id="設計學院">
+		   	    <h1>&#9752：</h1>
+		    	<h2></h2>
+		   </p>
+		   </div>
+
+
+	       <button class="js-back-to-top back-to-top" title="回到頭部">&#65085;</button>
+
+	       <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+	       <script>
+
+		   function goTo熱誠宿舍() { $("#熱誠宿舍")[0].scrollIntoView(); }
+		   function goTo信實宿舍() { $("#信實宿舍")[0].scrollIntoView(); }
+		   function goTo力行宿舍() { $("#力行宿舍")[0].scrollIntoView(); }
+		   function goTo良善宿舍() { $("#良善宿舍")[0].scrollIntoView(); }
+		   function goTo恩慈宿舍() { $("#恩慈宿舍")[0].scrollIntoView(); }
+		   function goTo體育館() { $("#體育館")[0].scrollIntoView(); }
+		   function goTo全人村() { $("#全人村")[0].scrollIntoView(); }
+		   function goTo生科樓() { $("#生科樓")[0].scrollIntoView(); }
+		   function goTo活動中心() { $("#活動中心")[0].scrollIntoView(); }
+		   function goTo圖書館() { $("#圖書館")[0].scrollIntoView(); }
+		   function goTo懷恩樓() { $("#懷恩樓")[0].scrollIntoView(); }
+		   function goTo維澈樓() { $("#維澈樓")[0].scrollIntoView(); }
+		   function goTo行政大樓() { $("#行政大樓")[0].scrollIntoView(); }
+		   function goTo真知教學大樓() { $("#真知教學大樓")[0].scrollIntoView(); }
+		   function goTo中正樓() { $("#中正樓")[0].scrollIntoView(); }
+		   function goTo資管樓() { $("#資管樓")[0].scrollIntoView(); }
+		   function goTo商設館() { $("#商設館")[0].scrollIntoView(); }
+		   function goTo商學大樓() { $("#商學大樓")[0].scrollIntoView(); }
+		   function goTo工學館() { $("#工學館")[0].scrollIntoView(); }
+		   function goTo土木館() { $("#土木館")[0].scrollIntoView(); }
+		   function goTo莊敬大樓() { $("#莊敬大樓")[0].scrollIntoView(); }
+		   function goTo科學館理學大樓() { $("#科學館理學大樓")[0].scrollIntoView(); }
+		   function goTo化學館() { $("#化學館")[0].scrollIntoView(); }
+		   function goTo篤信電學大樓() { $("#篤信電學大樓")[0].scrollIntoView(); }
+		   function goTo恩惠堂() { $("#恩惠堂")[0].scrollIntoView(); }
+		   function goTo建築館() { $("#建築館")[0].scrollIntoView(); }
+		   function goTo室設館() { $("#室設館")[0].scrollIntoView(); }
+		   function goTo景觀館() { $("#景觀館")[0].scrollIntoView(); }
+		   function goTo設計學院() { $("#設計學院")[0].scrollIntoView(); }
+
+		   $(function () {
+		   var $win = $(window);
+		   var $backToTop = $('.js-back-to-top');
+		    // 當用戶滾動到離頂部100像素時，展示回到頂部按鈕
+		   $win.scroll(function () {
+		   if ($win.scrollTop() > 100) {
+		   $backToTop.show();
+		   } 
+		   else {
+		   $backToTop.hide();
+		   }
+		   });
+		    // 當用戶點擊按鈕時，通過動畫效果返回頭部
+		   $backToTop.click(function () {
+		   $('html, body').animate({scrollTop: 0}, 200);
+		   });
+		   });
+           </script>
+
+
+       </div>
+　     <div class="footer">
+	     <div class="addone">中原大學資訊管理學系&nbsp;&nbsp;320桃園市中壢區中北路200號&nbsp;Tel:03 265 9999<br></div>
+         <div class="addtwo">Copyright©2019by中原大學資管系All rights reserved</div>
+      </div>
+    </div>
 
 </body>
 </html>

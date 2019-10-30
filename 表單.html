@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HW2</title>
+    <style>
+      body
+      {
+        background-image:url(picture/DSC09178.jpg);
+        background-size: 100%;
+      }
+
+      table{
+          border: 1px solid orange;
+          border: orange solid;
+          opacity: 0.85;
+          width: 60%;
+          height: 90%;
+      }
+
+      h1{
+        color: white;
+        text-shadow:12px 8px 5px #DDDDDD;
+        font-weight: bold;
+        font-size: 55px ;
+        font-family: Microsoft JhengHei ;
+      }
+
+      .b{
+          background-color: #FFFFBB;
+          color: black;
+          font-size: 25px;
+          padding: 10px 20px;
+          border: yellow solid;
+          margin: 30px;
+      }
+
+      td{
+          border: 1px dotted gray;
+          font-family: Microsoft JhengHei ;
+          padding: 11px; 
+      }
+
+      tr{
+          background-color:#FF8888;
+          padding: 11px; 
+      }
+    </style>
+  </head>
+  <body>
+    <table align="center">
+      <h1 align="center">回饋建議表單</h1>
+      <tr>
+        <td>系級</td>
+        <td>
+          <select size="1" name="choose">
+            <option>請選擇</option>
+            <option>商學院</option>
+            <option>工學院</option>
+            <option>理學院</option>
+            <option>設計學院</option>
+            <option>人育與法學院</option>
+            <option>電機資訊學院</option>         
+          </select>
+          <input type="text" name="username" size="15" maxlength="15" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>姓名</td>
+        <td>
+          <input type="text" name="username" size="10" maxlength="10" />性別
+          <input type="radio" name="gender" value="男" >男
+          <input type="radio" name="gender" value="女" >女
+        </td>
+      </tr>
+
+      <tr>
+        <td>學號</td>
+        <td>
+          <input type="text" name="username" size="12" maxlength="12" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>年齡</td>
+        <td>
+          <input type="radio" name="gender" value="20以下" >20以下
+          <input type="radio" name="gender" value="21-25" >21-25
+          <input type="radio" name="gender" value="26-30" >26-30
+          <input type="radio" name="gender" value="30以上" >30以上
+        </td>
+      </tr>
+
+      <tr>
+        <td>對網站的評價</td>
+        <td>
+        <input type="radio" name="態度" value="很認真">很認真
+        <input type="radio" name="態度" value="還算認真">還算認真
+        <input type="radio" name="態度" value="很不認真">很不認真
+        </td>
+      </tr>
+
+      <tr>
+        <td>信箱</td>
+        <td>
+          <input type="text" name="username" size="30" maxlength="30" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>意見回饋</td>
+        <td>
+          <textarea name="memo" cols="90" rows="5" wrap="hard"> </textarea>
+        </td>      
+      </tr>
+
+    </table>
+    <div align="center">
+      <input type="submit" name="cc" value="送出" class="b">
+      <input type="reset" name="cc" value="取消" class="b">
+    </div>
+  </body>
+</html>
