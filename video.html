@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>video</title>
+		<title>推廣影片</title>
 		<style>
 			body{background: grey;}
+		#head{
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: -180px;
+            }
+        #CYCU{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 200px;
+            left: -230px;
+            width: 180px;
+            height: 180px;
+           }
+        #wel{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 120px;
+            top: -15px;
+            width: 500px;
+            height: 50px;
+           }
+        #title{
+             display: block;
+             line-height: 132px;
+			 font-size: 75px;
+             font-family: "微軟正黑體";
+			 font-weight: bolder;
+			 letter-spacing: 1px;
+			 text-align: center;
+             position: relative;
+             left: 50px;
+             color: black;
+		   }
 		.first{
 			position: relative;
-			top: -130px;
+			top: -100px;
+			height: 1200px;
 		}
 		.second{
 			position: relative;
-			top: -250px;
+			top: -100px;
+			height: 1000px;
 		}
 		.BG{
 			width: 1500px;
-			height: 700px;
+			height: 1000px;
+			}
+		.BG1{
+			width: 1500px;
+			height: 900px;
 			}
 		.text{
-			position: absolute;
-			top: 200px;
-			left: 50px;
+			text-align: center;
+			position: relative;
+			top: -1000px;
 			font-family: "微軟正黑體";
 			font-weight: bolder;
-			font-size: 40px;
+			font-size: 60px;
+			color: black;
+		}
+		.text2{
+			text-align: center;
+			position: relative;
+			top: -900px;
+			font-family: "微軟正黑體";
+			font-weight: bolder;
+			font-size: 60px;
 			color: black;
 		}
 		.text1{
-			position: absolute;
-			top: 350px;
-			left: 50px;
+			position: relative;
+			top: 60px;
+			left: 220px;
 			line-height: 40px;
 			font-family: "微軟正黑體";
 			font-weight: bolder;
@@ -36,38 +89,90 @@
 			color: black;
 		}
 		#VideoOne{
-			position: absolute;
-			top: 220px;
-			left: 900px;
+			position: relative;
+			top: -980px;
+			margin-left: auto;
+			margin-right: auto;
 
 		}
+		#VideoTwo{
+			position: relative;
+			top: -830px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+		.img1{
+			
+		}
+		.img2{
+            position: relative;
+            left: 55px;
+		}
+		.img3{
+			
+		}
+		address{
+			color: black;
+			font-style: normal;
+			font-weight:normal;
+			letter-spacing:2px;
+		    text-align:center;
+            font-family:"微軟正黑體";
+		        }
 		</style>
 	</head>
 	<body>
+		<header>
+        <div id="head">
+        <img src="picture/favicon.png" id="CYCU"/>
+        <a href="index.html" style="text-decoration: none;"><font id="title">中原大學</font></a>
+        <img src="picture/welcome.png" id="wel"/>
+        </div>
+        </header>
+
 		<div class="first">
 		<img src="picture/white.png" class="BG">
 		<h1 class="text">宣傳影片</h1>
-        <font class="text1">
-        	對大學生活充滿著問號嗎？不知道該選哪間大學好嗎？<br>
-        	這部片實際邀請到就讀中原大學的學生來告訴你，<br>
-        	中原大學擁有什麼樣的特點，以及中原的學生具有什麼樣的優勢<br>
-        	別再猶豫了！跟著學長姊的腳步，朝中原邁進吧！
-        	
-        </font>
-		<iframe id="VideoOne" width="560" height="315" src="https://www.youtube.com/embed/Mhm7kwcHoDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+		<table id="VideoOne">
+			<tr>
+				<td><iframe width="960" height="540" src="https://www.youtube.com/embed/Mhm7kwcHoDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+			</tr>
+			<tr>
+				<td><font class="text1">
+        	    對大學生活充滿著問號嗎？不知道該選哪間大學好嗎？<br>
+        	    這部片實際邀請到就讀中原大學的學生來告訴你，<br>
+        	    中原大學擁有什麼樣的特點，以及中原的學生具有什麼樣的優勢<br>
+        	    別再猶豫了！跟著學長姊的腳步，朝中原邁進吧！
+                </font></td>
+			</tr>
+		</table>
 	   </div>
 
 	   <div class="second">
-		<img src="picture/white.png" class="BG">
-		<h1 class="text">宣傳影片</h1>
-        <font class="text1">
-        	對大學生活充滿著問號嗎？不知道該選哪間大學好嗎？<br>
-        	這部片實際邀請到就讀中原大學的學生來告訴你，<br>
-        	中原大學擁有什麼樣的特點，以及中原的學生具有什麼樣的優勢<br>
-        	別再猶豫了！跟著學長姊的腳步，朝中原邁進吧！
-        	
-        </font>
-		<iframe id="VideoOne" width="560" height="315" src="https://www.youtube.com/embed/ktfKiaRrSRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<img src="picture/white.png" class="BG1">
+		<h1 class="text2">幕後花絮</h1>
+
+		<table id="VideoTwo">
+			<tr>
+				<td></td>
+				<td style="position: relative; top: -50px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ktfKiaRrSRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><img src="picture/video3.jpg" width="450px" height="300px" class="img1"></td>
+                <td><img src="picture/video2.jpg" width="450px" height="300px" class="img2"></td>
+                <td><img src="picture/video1.jpg" width="450px" height="300px" class="img3"></td>
+			</tr>
+		</table>
 	   </div>
+
+	   <address>
+        <hr> 
+        <div class="addone">中原大學資訊管理學系&nbsp;&nbsp;320桃園市中壢區中北路200號&nbsp;Tel:03 265 9999<br></div>
+        <div class="addtwo">Copyright©2019by中原大學資管系All rights reserved</div>
+
+       </address>
 	</body>
 </html>
