@@ -3,21 +3,39 @@
   <head>
     <title>HW2</title>
     <style>
-      header
+      h1
       {
+        color:white;
+        background-color: gray;
         text-align: center;
-        color:  #FFFF77;
-        text-shadow:10px 5px 7px white;
+        text-shadow:12px 8px 5px black;
         font-weight: bold;
-        font-size: 55px ;
         font-family: Microsoft JhengHei ;
+        font-size: 60px;
       }
-      body
+      /*body*/
 
-      {
+      /*{
         background-image:url(picture/DSC09178.jpg);
+        background-image:url(picture/white.png);
         background-size: 100%;
+      }*/
+
+      body{
+          background: gray;
       }
+      .first{
+          position: relative;
+          top: 0px;
+          height: 0px;
+          z-index: -1; 
+      }
+      .BG{
+          width: 1250px;
+          height: 896px;
+          z-index: -1;
+      }
+
 
       table{
           margin-top: 50px;
@@ -34,6 +52,15 @@
           padding: 10px 20px;
           border: yellow solid;
           margin: 30px;
+
+          cursor:pointer;
+          border-radius: 10px;
+          font-family: Microsoft JhengHei ;
+      }
+      .b:hover 
+      {
+          background-color: #5cb85c; /* 滑鼠移上去時，反轉顏色 */
+          color: #fff;
       }
 
       td{
@@ -59,8 +86,12 @@
             }
     </style>
   </head>
+
   <body>
-    <header>回饋建議表單</header>
+    <h1>回饋建議表單</h1>
+    <div class="first">
+        <img src="picture/white.png" class="BG">
+    </div>
     <table align="center">
       <tr>
         <td>系級</td>
@@ -128,10 +159,12 @@
       </tr>
 
     </table>
+
     <div align="center">
       <input type="submit" name="cc" value="送出" class="b">
       <input type="reset" name="cc" value="取消" class="b">
     </div>
+
     <address>
       <hr> 
       <div class="addone">中原大學資訊管理學系&nbsp;&nbsp;320桃園市中壢區中北路200號&nbsp;Tel:03 265 9999<br></div>
